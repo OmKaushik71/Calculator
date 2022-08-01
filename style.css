@@ -1,0 +1,150 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+:root{
+    --primary-color: rgb(228, 235, 245);
+    --primary-shadow-dark:rgba(68, 64, 54, 0.382);
+    --primary-shadow-light:rgb(255, 255, 255);
+    --console-shadow:rgba(255,255,255,0.70);
+    --first-row-button-color:#fdfaf6;
+    --first-row-button-shadow-dark:rgba(159, 145, 109, 0.6);
+    --first-row-button-shadow-light:rgba(255, 255, 255, 0.7);
+    --column-button-background:#e5eaff;
+    --column-button-shadow-dark:rgba(87, 0, 121,0.2);
+    --column-button-color:#BD00FF;
+    --display-color:black;
+}
+.dark-mode{
+    --primary-color: rgb(37, 41, 51);
+    --primary-shadow-dark:rgba(0, 0, 0, 0.5);
+    --primary-shadow-light:rgba(195, 195, 195, 0.184);
+    --console-shadow:rgba(212, 212, 212, 0.112);
+    --first-row-button-color:rgb(76, 67, 59);
+    --first-row-button-shadow-dark:rgb(0, 0, 0);
+    --first-row-button-shadow-light:rgb(37, 41, 51);
+    --column-button-background:rgb(80, 57, 103);
+    --column-button-shadow-dark:rgba(26, 0, 36, 0.501);
+    --column-button-color:#BD00FF;
+
+    --display-color:rgba(255, 255, 255, 0.788);
+}
+
+h1{
+    font-size: 30px;
+    font-family: 'Bungee', cursive;
+    color: var(--display-color);
+    text-shadow: 10px 10px 10px -1px var(--primary-shadow-dark),
+                -7px -7px 7px -1px var(--primary-shadow-light);
+}
+a{
+    text-decoration: none;
+    color: var(--display-color);
+    
+}
+h3{
+    font-size: 20px;
+    margin: 10px;
+}
+body{
+    background-color: var(--primary-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    color:var(--display-color);
+    
+}
+.calculator-body{
+    height: 600px;
+    width: 300px;
+    border-radius: 20px;
+    
+    box-shadow: 10px 10px 10px -1px var(--primary-shadow-dark),
+                -7px -7px 7px -1px var(--primary-shadow-light);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.display{
+    height: 150px;
+    width: 280px;
+    text-align: end;
+    font-size: 50px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    /* border: 1px solid black; */
+}
+.console{
+    box-shadow: -2px -2px 5px var(--console-shadow);
+    background-color: var(--primary-color);
+    border-radius: 20px;
+   width: 300px;
+   height: 440px;
+   display: flex;
+   flex-direction: column;
+justify-content: space-around;
+
+
+}
+.console div{
+    display: flex;
+    justify-content: space-around;
+}
+.console div button{
+    height: 50px;
+    width: 60px;
+    border: none;
+    border-radius: 25px;
+    background-color:  var(--primary-color);
+     box-shadow: 4px 4px 5px 0px var(--primary-shadow-dark),
+                -4px -4px 5px 0px var(--primary-shadow-light);
+    font-size: 20px;
+    cursor: pointer;
+    color: var(--display-color);
+}
+.console div button:active{
+     box-shadow: inset  4px 4px 5px 0px var(--primary-shadow-dark),
+                 inset  -4px -4px 5px 0px var(--primary-shadow-light);
+}
+ #clear{
+    background-color: #FDB82D;
+     color: white;  
+}
+.console .first-row button{
+    background-color: var(--first-row-button-color);
+     box-shadow: 4px 4px 5px 0px var(--first-row-button-shadow-dark),
+                -2px -2px 4px 0px var(--first-row-button-shadow-light);
+                color: #D0A03E;
+}
+#divide , #multiply, #minus, #plus{
+    background-color: var(--column-button-background);
+     box-shadow: 4px 4px 3px 0px var(--column-button-shadow-dark),
+                -2px -2px 4px 0px var(--first-row-button-shadow-light);
+                color: var(--column-button-color);
+}
+#divide:active, #multiply:active, #minus:active, #plus:active{
+     box-shadow: inset  4px 4px 5px 0px var(--primary-shadow-dark),
+                 inset  -4px -4px 5px 0px var(--primary-shadow-light);
+}
+#equals{
+    background-color: rgb(154, 43, 238);
+    color: white;
+      
+}
+img{
+    width: auto;
+    height: 30px;
+    
+}
+#mode{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

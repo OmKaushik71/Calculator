@@ -14,6 +14,8 @@
     --column-button-shadow-dark:rgba(87, 0, 121,0.2);
     --column-button-color:#BD00FF;
     --display-color:black;
+    --font:rgb(99, 99, 99);
+    --base-color:#bd00ff;
 }
 .dark-mode{
     --primary-color: rgb(37, 41, 51);
@@ -26,7 +28,8 @@
     --column-button-background:rgb(80, 57, 103);
     --column-button-shadow-dark:rgba(26, 0, 36, 0.501);
     --column-button-color:#BD00FF;
-
+    --base-color:#fdb82d;
+    --font:rgb(99, 99, 99);
     --display-color:rgba(255, 255, 255, 0.788);
 }
 
@@ -61,7 +64,6 @@ body{
     height: 600px;
     width: 300px;
     border-radius: 20px;
-    
     box-shadow: 10px 10px 10px -1px var(--primary-shadow-dark),
                 -7px -7px 7px -1px var(--primary-shadow-light);
 
@@ -77,9 +79,16 @@ body{
     text-align: end;
     font-size: 50px;
     display: flex;
+    flex-direction: column;
     justify-content: flex-end;
     align-items: flex-end;
-    /* border: 1px solid black; */
+}
+.display-text{
+    height: 60px;
+}
+.expression{
+    font-size: 30px;
+    color: var(--font);
 }
 .console{
     box-shadow: -2px -2px 5px var(--console-shadow);
@@ -98,6 +107,7 @@ justify-content: space-around;
     justify-content: space-around;
 }
 .console div button{
+    
     height: 50px;
     width: 60px;
     border: none;
@@ -110,6 +120,8 @@ justify-content: space-around;
     color: var(--display-color);
 }
 .console div button:active{
+
+color: var(--base-color);
      box-shadow: inset  4px 4px 5px 0px var(--primary-shadow-dark),
                  inset  -4px -4px 5px 0px var(--primary-shadow-light);
 }
@@ -128,6 +140,10 @@ justify-content: space-around;
      box-shadow: 4px 4px 3px 0px var(--column-button-shadow-dark),
                 -2px -2px 4px 0px var(--first-row-button-shadow-light);
                 color: var(--column-button-color);
+}
+#divide{
+    font-size: 25px;
+    font-weight: 100;
 }
 #divide:active, #multiply:active, #minus:active, #plus:active{
      box-shadow: inset  4px 4px 5px 0px var(--primary-shadow-dark),

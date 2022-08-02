@@ -52,7 +52,14 @@ allClear.addEventListener("click", () => {
 button.forEach((button) =>
   button.addEventListener("click", (e) => {
     if (numbers.includes(+e.target.textContent))
-      if (displayValue.textContent == 0) {
+      if (
+        displayValue.textContent == "Nice try ;)" ||
+        displayValue.textContent == "NaN" ||
+        displayValue.textContent == "Infinity" ||
+        displayValue.textContent == "Error"
+      ) {
+        displayValue.textContent = e.target.textContent;
+      } else if (displayValue.textContent == 0) {
         displayValue.textContent = e.target.textContent;
       } else {
         displayValue.textContent += e.target.textContent;

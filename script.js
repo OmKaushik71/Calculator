@@ -34,10 +34,13 @@ operators.forEach((operator) =>
 );
 let a, b, op;
 equals.addEventListener("click", (e) => {
-  b = +displayValue.textContent;
-  displayValue.textContent = operate(a, b, op);
-  expressions.textContent = "";
-  reset();
+  if (a == "" || a == null) displayValue.textContent = "Invalid Input";
+  else {
+    b = +displayValue.textContent;
+    displayValue.textContent = operate(a, b, op);
+    expressions.textContent = "";
+    reset();
+  }
 });
 
 allClear.addEventListener("click", () => {
@@ -59,9 +62,16 @@ button.forEach((button) =>
 );
 
 clear.addEventListener("click", () => {
-  let arr = displayValue.textContent.split("");
-  arr.pop();
-  displayValue.textContent = arr.join("");
+  if (
+    displayValue.textContent == "Nice try ;)" ||
+    displayValue.textContent == "NaN"
+  )
+    displayValue.textContent = "";
+  else {
+    let arr = displayValue.textContent.split("");
+    arr.pop();
+    displayValue.textContent = arr.join("");
+  }
 });
 
 function add(a, b) {
@@ -74,7 +84,8 @@ function multiply(a, b) {
   return a * b;
 }
 function divide(a, b) {
-  return a / b;
+  if (b == 0) return "Nice try ;)";
+  else return a / b;
 }
 function percent(a) {
   return a / 100;

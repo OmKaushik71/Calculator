@@ -64,7 +64,8 @@ button.forEach((button) =>
 clear.addEventListener("click", () => {
   if (
     displayValue.textContent == "Nice try ;)" ||
-    displayValue.textContent == "NaN"
+    displayValue.textContent == "NaN" ||
+    displayValue.textContent == "Infinity"
   )
     displayValue.textContent = "";
   else {

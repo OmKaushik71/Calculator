@@ -58,6 +58,7 @@ button.forEach((button) =>
         displayValue.textContent += e.target.textContent;
       }
     else if (e.target.textContent == ".") displayValue.textContent += ".";
+    checkLength();
   })
 );
 
@@ -65,7 +66,8 @@ clear.addEventListener("click", () => {
   if (
     displayValue.textContent == "Nice try ;)" ||
     displayValue.textContent == "NaN" ||
-    displayValue.textContent == "Infinity"
+    displayValue.textContent == "Infinity" ||
+    displayValue.textContent == "Error"
   )
     displayValue.textContent = "";
   else {
@@ -95,6 +97,10 @@ function reset() {
   a = "";
   b = "";
   op = "";
+}
+function checkLength() {
+  let numArr = displayValue.textContent.split("");
+  if (numArr.length > 10) displayValue.textContent = "Error";
 }
 function operate(a, b, op) {
   if (op == "+") return add(a, b);

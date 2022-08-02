@@ -1,4 +1,5 @@
 let numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+let operatorArr = ["+", "-", "/", "*", "%"];
 let displayValue = document.querySelector(".display-text");
 let expressions = document.querySelector(".expression");
 let button = document.querySelectorAll("button");
@@ -128,3 +129,65 @@ themeButton.onclick = function () {
     themeButton.innerHTML = `<img src="./images/moon.png" alt="" />`;
   }
 };
+
+//keyboard support
+
+document.addEventListener("keydown", (e) => {
+  if (numbers.includes(+e.key))
+    if (
+      displayValue.textContent == "Nice try ;)" ||
+      displayValue.textContent == "NaN" ||
+      displayValue.textContent == "Infinity" ||
+      displayValue.textContent == "Error"
+    ) {
+      displayValue.textContent = e.key;
+    } else if (displayValue.textContent == 0) {
+      displayValue.textContent = e.key;
+    } else {
+      displayValue.textContent += e.key;
+    }
+  else if (e.key == ".") displayValue.textContent += ".";
+  else if (operatorArr.includes(e.key)) {
+    if (e.key == "*") {
+      op = "x";
+    } else op = e.key;
+    if (a) {
+      b = +displayValue.textContent;
+      a = operate(a, b, lastOperator);
+      expressions.textContent = a + " " + op;
+      displayValue.textContent = "";
+      lastOperator = op;
+    } else {
+      a = +displayValue.textContent;
+      expressions.textContent = displayValue.textContent + " " + op;
+      displayValue.textContent = "";
+      lastOperator = op;
+    }
+  } else if (e.key == "=") {
+    if (a == "" || a == null) displayValue.textContent = "Invalid Input";
+    else {
+      b = +displayValue.textContent;
+      displayValue.textContent = operate(a, b, op);
+      expressions.textContent = "";
+      reset();
+    }
+  } else if (e.key == "Backspace") {
+    if (
+      displayValue.textContent == "Nice try ;)" ||
+      displayValue.textContent == "NaN" ||
+      displayValue.textContent == "Infinity" ||
+      displayValue.textContent == "Error"
+    )
+      displayValue.textContent = "";
+    else {
+      let arr = displayValue.textContent.split("");
+      arr.pop();
+      displayValue.textContent = arr.join("");
+    }
+  } else if (e.key == "Delete") {
+    displayValue.textContent = "";
+    expressions.textContent = "";
+    reset();
+  }
+  checkLength();
+});

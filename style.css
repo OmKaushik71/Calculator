@@ -107,7 +107,7 @@ justify-content: space-around;
     justify-content: space-around;
 }
 .console div button{
-    
+    outline: none;
     height: 50px;
     width: 60px;
     border: none;

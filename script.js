@@ -66,7 +66,10 @@ button.forEach((button) =>
       } else {
         displayValue.textContent += e.target.textContent;
       }
-    else if (e.target.textContent == ".") displayValue.textContent += ".";
+    else if (e.target.textContent == ".") {
+      if (!displayValue.textContent.includes("."))
+        displayValue.textContent += ".";
+    }
     checkLength();
   })
 );

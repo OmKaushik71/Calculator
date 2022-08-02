@@ -60,6 +60,7 @@ button.forEach((button) =>
         displayValue.textContent == "Error"
       ) {
         displayValue.textContent = e.target.textContent;
+        expressions.textContent = "";
       } else if (displayValue.textContent == 0) {
         displayValue.textContent = e.target.textContent;
       } else {
@@ -96,7 +97,7 @@ function multiply(a, b) {
 }
 function divide(a, b) {
   if (b == 0) return "Nice try ;)";
-  else return a / b;
+  else return Math.floor((a / b) * 100000000) / 100000000;
 }
 function percent(a) {
   return a / 100;

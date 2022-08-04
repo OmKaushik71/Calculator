@@ -112,7 +112,8 @@ function reset() {
 }
 function checkLength() {
   let numArr = displayValue.textContent.split("");
-  if (numArr.length > 10) displayValue.textContent = "Error";
+  if (displayValue.textContent == "Nice try ;)") return;
+  else if (numArr.length > 10) displayValue.textContent = "Error";
 }
 function operate(a, b, op) {
   if (op == "+") return add(a, b);

@@ -11,4 +11,4 @@ The objective of this project was to practice Javascript fundamentals by making 
 For the design part I have taken inspiration from Neumorphism. Additionally, I have added a Dark and Light theme switcher using CSS variables.
 
 Feel free to check it out. Any or all suggestions are welcome.  
-[Live Link](https://omkaushik71.github.io/Calculator-Neumorphic/)
+[Live Link](https://kaushikom.github.io/Calculator-Neumorphic/)
